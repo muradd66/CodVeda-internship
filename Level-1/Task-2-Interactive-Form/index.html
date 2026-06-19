@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CozyRoast | VIP Club Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form-wrapper">
+        <div class="form-container">
+
+            <div class="form-header">
+                <h2>Join CozyRoast VIP</h2>
+                <p>Subscribe to get exclusive coffee blends and member-only rewards.</p>
+            </div>
+
+            <form id="registrationForm" novalidate>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <div class="input-control">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input type="text" id="fullName" placeholder="John Doe" autocomplete="off">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <small class="error-message">Name is required</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-control">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="john@example.com" autocomplete="off">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <small class="error-message">Please enter a valid email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-control">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Create a secure password">
+                        <i class="fa-solid fa-circle-check status-icon success"></i>
+                        <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+                    </div>
+                    <small class="error-message">Password must be at least 8 characters</small>
+                </div>
+
+                <div class="password-strength-meter">
+                    <div class="meter-bar"></div>
+                    <span class="meter-text">Password Strength</span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+                    <div class="checkbox-error-wrapper">
+                        <small class="error-message">You must accept the terms</small>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    <span class="btn-text">Create Account</span>
+                    <i class="fa-solid fa-spinner btn-spinner"></i>
+                </button>
+
+            </form>
+
+            <div id="successCard" class="success-card">
+                <i class="fa-solid fa-circle-check success-main-icon"></i>
+                <h3>Welcome to the Club!</h3>
+                <p>Your VIP registration has been successfully processed. Check your email for rewards.</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
