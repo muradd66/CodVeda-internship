@@ -1,0 +1,486 @@
+:root {
+    --bg-main: #0d1117;
+    --bg-card: #161b22;
+    --bg-input: #21262d;
+    --accent-glow: #58a6ff;
+    --accent-success: #238636;
+    --color-error: #f85149;
+    --text-primary: #c9d1d9;
+    --text-muted: #8b949e;
+    --border-color: #30363d;
+    --radius-main: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 740px;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.logo-icon-box {
+    position: relative;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+}
+
+.pulse-radar-icon {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    font-size: 1rem;
+    color: var(--accent-glow);
+    animation: radarPulse 2s infinite linear;
+}
+
+@keyframes radarPulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px var(--accent-glow));
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--accent-glow);
+}
+
+.app-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.search-bar-icon {
+    position: absolute;
+    left: 18px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 16px 16px 50px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-main);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-glow);
+    background-color: var(--bg-main);
+    box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.15);
+}
+
+.inline-spinner {
+    position: absolute;
+    right: 18px;
+    color: var(--accent-glow);
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.inline-spinner.active {
+    opacity: 1;
+}
+
+.profile-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-main);
+    padding: 32px;
+}
+
+.data-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.data-visible {
+    display: block;
+    animation: slideUp 0.35s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-meta-block {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    object-fit: cover;
+}
+
+.user-identity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-identity h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.user-identity h2 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.user-identity h2 a:hover {
+    color: var(--accent-glow);
+}
+
+.user-identity .github-handle {
+    color: var(--accent-glow);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.user-identity .joined-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.user-bio {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.stats-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background-color: var(--bg-main);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.metric-box h4 {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.metric-box p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.user-extra-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.detail-item i {
+    color: var(--text-muted);
+    width: 16px;
+    text-align: center;
+}
+
+.detail-item a {
+    color: var(--accent-glow);
+    text-decoration: none;
+}
+
+.detail-item a:hover {
+    text-decoration: underline;
+}
+
+.repos-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 24px 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.repos-section-title i {
+    color: var(--accent-glow);
+}
+
+.repos-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.repo-item-card {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.2s ease;
+}
+
+.repo-item-card:hover {
+    border-color: var(--accent-glow);
+    transform: translateX(4px);
+}
+
+.repo-header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.repo-name-link {
+    color: var(--accent-glow);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.repo-name-link:hover {
+    text-decoration: underline;
+}
+
+.repo-description-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.repo-meta-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.tech-lang-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tech-lang-sphere {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.repo-stats-counters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-counter-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.skeleton-active {
+    display: block;
+}
+
+.profile-header-block {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.skeleton-element {
+    background: linear-gradient(90deg, #161b22 25%, #21262d 50%, #161b22 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.skeleton-header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.skeleton-line {
+    height: 16px;
+    width: 100%;
+}
+
+.title-line {
+    width: 50%;
+    height: 22px;
+}
+
+.sub-line {
+    width: 30%;
+}
+
+.body-line {
+    margin-top: 12px;
+}
+
+.body-line-short {
+    margin-top: 8px;
+    width: 70%;
+    margin-bottom: 24px;
+}
+
+.skeleton-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.skeleton-stat-box {
+    height: 65px;
+    border-radius: 8px;
+}
+
+.error-panel {
+    background-color: rgba(248, 81, 73, 0.05);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-main);
+    padding: 20px;
+    display: none;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.error-icon {
+    font-size: 1.8rem;
+    color: var(--color-error);
+}
+
+.error-details h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.error-details p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.app-footer {
+    text-align: center;
+    margin-top: 32px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 580px) {
+    .user-extra-details {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-meta-block,
+    .profile-header-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
