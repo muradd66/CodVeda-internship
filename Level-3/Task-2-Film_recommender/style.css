@@ -672,7 +672,6 @@ nav {
         gap: 15px;
         flex-wrap: wrap;
         order: 3;
-        /* Linkləri ən aşağı sətirə nizamlı şəkildə atırıq */
     }
 
     .search-container {
@@ -690,20 +689,5 @@ nav {
     .film-container {
         grid-template-columns: repeat(2, 1fr);
         margin: 30px 4vw;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .film-container {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-info h2 {
-        font-size: 32px;
-    }
-
-    .actor-card img {
-        width: 60px;
-        height: 60px;
     }
 }
