@@ -568,9 +568,7 @@ body {
     opacity: 1;
 }
 
-/* =========================================
-   FOOTER (Premium Dark Mode)
-   ========================================= */
+
 .main-footer {
     background-color: var(--text-dark);
     color: var(--surface-white);
@@ -591,7 +589,7 @@ body {
     margin-bottom: 60px;
 }
 
-/* Footer Brand */
+
 .footer-logo .logo-text {
     background: none;
     -webkit-text-fill-color: var(--surface-white);
@@ -627,7 +625,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* Footer Links */
+
 .footer-links h3,
 .footer-newsletter h3 {
     font-size: 1.1rem;
@@ -655,7 +653,6 @@ body {
     padding-left: 5px;
 }
 
-/* Footer Newsletter */
 .footer-newsletter p {
     color: #94a3b8;
     font-size: 0.9rem;
@@ -711,7 +708,6 @@ body {
     color: var(--brand-primary);
 }
 
-/* Footer Bottom */
 .footer-bottom {
     display: flex;
     justify-content: space-between;

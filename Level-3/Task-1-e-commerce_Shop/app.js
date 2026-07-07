@@ -1,15 +1,13 @@
-
 const ShopState = {
     products: [],
     categories: [],
     cart: JSON.parse(localStorage.getItem("aura_cart")) || [],
     favorites: JSON.parse(localStorage.getItem("aura_favs")) || [],
 
-    // Filtering Rules
     currentCategory: "all",
-    currentView: "all", // 'all' or 'favorites'
+    currentView: "all", 
     searchQuery: "",
-    sortType: "default" // 'price-asc', 'price-desc', 'name-asc'
+    sortType: "default" 
 };
 
 
@@ -390,11 +388,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (newsletterForm) {
         newsletterForm.addEventListener("submit", (e) => {
-            e.preventDefault(); // Səhifənin yenilənməsinin qarşısını alır
+            e.preventDefault(); 
 
             if (newsletterInput.value.trim() !== "") {
                 showToast("Welcome to the Inner Circle! 🎉");
-                newsletterInput.value = ""; // Formu təmizləyir
+                newsletterInput.value = ""; 
             }
         });
     }
